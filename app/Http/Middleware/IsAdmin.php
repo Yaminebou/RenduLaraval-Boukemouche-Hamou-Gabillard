@@ -20,6 +20,8 @@ class IsAdmin
         return $next($request);
 
         }
-        return redirect()->route('post.index');
+        return redirect()
+            ->route('post.index')
+            ->with('success', 'Vous n\'avez pas les droits pour accéder à cette page.');
     }
 }

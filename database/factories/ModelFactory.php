@@ -30,4 +30,17 @@ $factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
 
     ];
 
+
+});
+
+$factory->define(App\Models\Event::class, function (Faker\Generator $faker) {
+    static $password;
+
+    return [
+        'name' => $faker->sentence(),
+        'description' => $faker->text(),
+        'lieu' => $faker->text(),
+        'tarif'=>$faker->numberBetween(0,50),
+        'user_id' => $faker->numberBetween(1, 20),
+    ];
 });
